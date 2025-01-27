@@ -20,7 +20,6 @@ dist/
 build/
 
 # Docker
-Dockerfile
 docker-compose.yml
 *.dockerignore
 
