@@ -30,5 +30,25 @@ This project provides a streamlined process for initializing a configuration and
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/ajishvnair/pillar-repo.git
+   cd pillar-repo/
+   ```
+2. Install Dependencies
+    ```
+    npm i
+    ```
+3. Add env files in config/
+    ```
+    create env file
+    .env.development
+    .env.staging
+    .env.production
+    ```
+4. Run init command
+    ```
+    pillar-repo init
+    ```
+5. Run deploy command
+    ```
+    pillar-repo deploy -e <enviornment>
+    ```

@@ -51,21 +51,21 @@ export async function deployCommand(options) {
       environment: options.environment
     });
 
-    // // Upload artifacts to S3
-    // await uploadArtifacts({
-    //   bucket: config.aws.s3.bucket,
-    //   artifacts: config.build.artifacts,
-    //   imageTag
-    // });
+    // Upload artifacts to S3
+    await uploadArtifacts({
+      bucket: config.aws.s3.bucket,
+      artifacts: config.build.artifacts,
+      imageTag
+    });
 
-    // // Push Docker image to the registry
-    // const pushedImageTag = await pushDockerImage(imageTag);
+    // Push Docker image to the registry
+    const pushedImageTag = await pushDockerImage(imageTag);
 
-    // // Deploy to EC2
-    // await deployToEC2({
-    //   imageTag: pushedImageTag,
-    //   environment: options.environment
-    // });
+    // Deploy to EC2
+    await deployToEC2({
+      imageTag: pushedImageTag,
+      environment: options.environment
+    });
 
     logger.info('Deployment completed successfully');
   } catch (error) {

@@ -26,6 +26,7 @@ docker-compose.yml
 # AWS specific
 .aws/
 aws/
+!src/aws/
 *.pem
 
 # IDEs and editors
