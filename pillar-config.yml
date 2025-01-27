@@ -1,0 +1,24 @@
+projectName: ''
+awsRegion: us-west-2
+repository: https://github.com/frandiox/vite-ssr.git
+
+aws:
+  region: us-west-2
+  s3:
+    bucket: template-parser
+  ec2:
+    instance_type: t3.micro
+    security_groups:
+      - vite-ssr-sg
+
+docker:
+  registry: local  # or your ECR URL: {aws-account}.dkr.ecr.{region}.amazonaws.com
+  buildOptions:
+    dockerfile: Dockerfile
+    buildArgs:
+      NODE_ENV: production
+
+build:
+  command: yarn build
+  artifacts:
+    - dist/
